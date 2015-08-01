@@ -24,6 +24,14 @@ GIT
       spree_backend (~> 3.0.0)
 
 GIT
+  remote: git://github.com/spree-contrib/spree_reviews.git
+  revision: 664ed28313dca469ee39e7ca6ba9a6ac0df0d4eb
+  branch: 3-0-stable
+  specs:
+    spree_reviews (3.0.0.beta)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git://github.com/spree-contrib/spree_social_products.git
   revision: cf9a156eb6e7fc5645eee36f6b50a7d9599472fd
   branch: 3-0-stable
@@ -384,6 +392,7 @@ DEPENDENCIES
   spree_paypal_express!
   spree_recently_viewed!
   spree_related_products!
+  spree_reviews!
   spree_social_products!
   spring
   turbolinks
