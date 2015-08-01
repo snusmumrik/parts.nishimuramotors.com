@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801090827) do
+ActiveRecord::Schema.define(version: 20150801091824) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -581,6 +581,26 @@ ActiveRecord::Schema.define(version: 20150801090827) do
 
   add_index "spree_reimbursements", ["customer_return_id"], name: "index_spree_reimbursements_on_customer_return_id", using: :btree
   add_index "spree_reimbursements", ["order_id"], name: "index_spree_reimbursements_on_order_id", using: :btree
+
+  create_table "spree_relation_types", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.string   "applies_to",  limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_relations", force: :cascade do |t|
+    t.integer  "relation_type_id", limit: 4
+    t.integer  "relatable_id",     limit: 4
+    t.string   "relatable_type",   limit: 255
+    t.integer  "related_to_id",    limit: 4
+    t.string   "related_to_type",  limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "discount_amount",              precision: 8, scale: 2, default: 0.0
+    t.integer  "position",         limit: 4
+  end
 
   create_table "spree_return_authorization_reasons", force: :cascade do |t|
     t.string   "name",       limit: 255
