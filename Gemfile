@@ -50,4 +50,4 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 gem 'spree_paypal_express', github: 'spree-contrib/better_spree_paypal_express', branch: '3-0-stable'
 gem 'spree_recently_viewed', github: 'spree-contrib/spree_recently_viewed', branch: '3-0-stable'
 gem 'spree_related_products', github: 'spree-contrib/spree_related_products', branch: '3-0-stable'
-
+gem 'spree_social_products', github: 'spree-contrib/spree_social_products', branch: '3-0-stable'
