@@ -8,6 +8,19 @@ GIT
       spree_core (~> 3.0.0)
 
 GIT
+  remote: git://github.com/spree-contrib/spree_i18n.git
+  revision: b0f49a3c254fa8b42ff8c8ffcd35ce264e9ff7d3
+  branch: 3-0-stable
+  specs:
+    spree_i18n (3.0.0)
+      friendly_id-globalize
+      globalize (~> 5.0.1)
+      i18n_data (~> 0.5.1)
+      kaminari-i18n (~> 0.3.2)
+      rails-i18n (~> 4.0.1)
+      spree_core (~> 3.0.0)
+
+GIT
   remote: git://github.com/spree-contrib/spree_recently_viewed.git
   revision: 47dab15e8f0541851067b638806c5810bdce3e06
   branch: 3-0-stable
@@ -164,14 +177,20 @@ GEM
       railties (>= 3.2, < 5.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    friendly_id-globalize (1.0.0.alpha2)
+      friendly_id (~> 5.1.0, < 6.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    globalize (5.0.1)
+      activemodel (>= 4.2.0, < 4.3)
+      activerecord (>= 4.2.0, < 4.3)
     highline (1.6.21)
     htmlentities (4.3.4)
     httparty (0.13.5)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
+    i18n_data (0.5.1)
     jbuilder (2.3.1)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -185,6 +204,9 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-i18n (0.3.2)
+      kaminari
+      rails
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -247,6 +269,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails-i18n (4.0.4)
+      i18n (~> 0.6)
+      railties (~> 4.0)
     railties (4.2.2)
       actionpack (= 4.2.2)
       activesupport (= 4.2.2)
@@ -389,6 +414,7 @@ DEPENDENCIES
   spree (= 3.0.3)
   spree_auth_devise!
   spree_gateway!
+  spree_i18n!
   spree_paypal_express!
   spree_recently_viewed!
   spree_related_products!

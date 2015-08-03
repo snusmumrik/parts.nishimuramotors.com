@@ -12,3 +12,4 @@
 //= require spree/backend/spree_paypal_express
 //= require spree/backend/spree_social_products
 //= require spree/backend/spree_reviews
+//= require spree/backend/spree_i18n
