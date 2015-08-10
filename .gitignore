@@ -13,4 +13,5 @@
 /tmp
 
 config/database.yml
+config/initializers/spree.rb
 public/spree/products
