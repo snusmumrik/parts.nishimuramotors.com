@@ -43,6 +43,7 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'aws-sdk'
 
 gem 'spree', '3.0.3'
 gem 'spree_gateway', github: 'spree/spree_gateway', branch: '3-0-stable'
@@ -53,3 +54,4 @@ gem 'spree_related_products', github: 'spree-contrib/spree_related_products', br
 gem 'spree_social_products', github: 'spree-contrib/spree_social_products', branch: '3-0-stable'
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: '3-0-stable'
 gem 'spree_i18n', github: 'spree-contrib/spree_i18n', branch: '3-0-stable'
+gem 'spree_mail_settings', github: 'spree-contrib/spree_mail_settings', branch: '3-0-stable'

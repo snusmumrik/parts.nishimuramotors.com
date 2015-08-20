@@ -21,6 +21,14 @@ GIT
       spree_core (~> 3.0.0)
 
 GIT
+  remote: git://github.com/spree-contrib/spree_mail_settings.git
+  revision: 99af7e4a137ac76fe4e93b1c8e5a38d81583904c
+  branch: 3-0-stable
+  specs:
+    spree_mail_settings (2.2.0)
+      spree_backend (~> 3.0.0)
+
+GIT
   remote: git://github.com/spree-contrib/spree_recently_viewed.git
   revision: 47dab15e8f0541851067b638806c5810bdce3e06
   branch: 3-0-stable
@@ -124,6 +132,11 @@ GEM
       json
     awesome_nested_set (3.0.2)
       activerecord (>= 4.0.0, < 5)
+    aws-sdk (1.64.0)
+      aws-sdk-v1 (= 1.64.0)
+    aws-sdk-v1 (1.64.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -403,6 +416,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   byebug
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
@@ -415,6 +429,7 @@ DEPENDENCIES
   spree_auth_devise!
   spree_gateway!
   spree_i18n!
+  spree_mail_settings!
   spree_paypal_express!
   spree_recently_viewed!
   spree_related_products!
