@@ -890,7 +890,7 @@ ja:
     other_items_in_other:
     out_of_stock: "在庫が品切れです"
     overview: "概要"
-    package_from:
+    package_from: 発送元
     pagination:
       next_page: "次のページ »"
       previous_page: "« 前のページ"
