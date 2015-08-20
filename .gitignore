@@ -15,4 +15,5 @@
 config/database.yml
 config/initializers/spree.rb
 config/secrets.yml
+public/assets
 public/spree/products
