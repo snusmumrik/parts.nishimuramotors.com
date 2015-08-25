@@ -11,6 +11,18 @@ Deface::Override.new(:virtual_path => "spree/products/show",
                      :text => '<h3 class="product-section-title">レビュー</h3>'
                      )
 
+# Deface::Override.new(:virtual_path => "spree/products/show",
+#                      :name => "translate_write_your_own_review",
+#                      :replace => "#reviews",
+#                      :text => '<erb loud>link_to "レビューを書きませんか？", new_product_review_path(@product), class: "btn btn-default"</erb>'
+#                      )
+
+Deface::Override.new(:virtual_path => "spree/products/show",
+                     :name => "translate_write_your_own_review",
+                     :replace => "#reviews",
+                     :text => ''
+                     )
+
 Deface::Override.new(:virtual_path => "spree/products/show",
                      :name => "translate_bookmark",
                      :replace => "#social_nav h6",
