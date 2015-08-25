@@ -9437,14 +9437,14 @@ button.close {
 
 /* line 8 */
 #spree-header {
-    /* background: #1c5c92 url(/assets/spree_header-198b754a34f1428c25f64303be8ac2aae84a076433af18ca55b65d7cbf1a0e13.jpg) center center; */
+    background: none !important;
     background-size: cover;
     margin-bottom: 20px;
 }
 
 /* line 13 */
 #spree-header #header {
-    /* background: rgba(34, 34, 34, 0.4); */
+    background: none !important;
     padding: 20px 0;
 }
 
