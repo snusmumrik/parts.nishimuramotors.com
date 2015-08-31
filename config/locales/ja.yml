@@ -314,7 +314,7 @@ ja:
     user_registrations:
       destroyed:
       inactive_signed_up:
-      signed_up:
+      signed_up: ユーザー登録に成功しました。
       updated:
     user_sessions:
       signed_in: "サインインに成功しました。"
