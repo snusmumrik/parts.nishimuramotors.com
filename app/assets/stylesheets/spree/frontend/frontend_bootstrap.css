@@ -9484,7 +9484,7 @@ button.close {
 
 /* line 53 */
 .product-body {
-    height: 170px;
+    height: 200px !important;
 }
 
 /* line 57 */
