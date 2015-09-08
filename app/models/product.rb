@@ -9,7 +9,12 @@ class Product < ActiveRecord::Base
       p row
 
       price = row[3] || 0
-      # spree_product = Spree::Product.create("name"=>"#{row[0]}", "sku"=>"", "prototype_id"=>"", "price"=>"#{price}", "available_on"=>"2015/09/01", "shipping_category_id"=>"1")
+      if row[5] == true
+        available = "2015/09/01"
+      else
+        available = ""
+      end
+      # spree_product = Spree::Product.create("name"=>"#{row[0]}", "sku"=>"", "prototype_id"=>"", "price"=>"#{price}", "available_on"=>"#{available}", "shipping_category_id"=>"1")
       spree_product = Spree::Product.find($.)
       spree_product.description = row[2]
       spree_product.save
@@ -48,7 +53,6 @@ class Product < ActiveRecord::Base
       array << price.rakuten unless price.rakuten.nil?
       array << price.yahoo unless price.yahoo.nil?
       array.sort
-      p array
 
       low = array.first
       high = array.last
@@ -57,7 +61,11 @@ class Product < ActiveRecord::Base
       if !low.nil? && !high.nil?
         product.price = low + (high - low) * percentage
       elsif !low.nil?
-        product.price = low + low * percentage
+        product.price = low * 1.3
+      end
+
+      if array.size == 0
+        product.avilable_on = nil
       end
 
       p product.price.to_i
