@@ -18,7 +18,6 @@ class Product < ActiveRecord::Base
     end
   end
 
-
   def self.save_image(spree_product, image_url)
     url = URI.parse(image_url)
     req = Net::HTTP::Get.new(url.to_s)
@@ -37,5 +36,32 @@ class Product < ActiveRecord::Base
     extention = "image/jpeg"
     image.content_type = extention
     spree_product.images.create(viewable_id: spree_product.id, viewable: image)
+  end
+
+  def self.update_price
+    Spree::Product.all.each do |product|
+      price = Price.where(["spree_product_id = ?", product.id]).first
+      array = Array.new
+      array << price.ngsj unless price.ngsj.nil?
+      array << price.iiparts unless price.iiparts.nil?
+      array << price.amazon unless price.amazon.nil?
+      array << price.rakuten unless price.rakuten.nil?
+      array << price.yahoo unless price.yahoo.nil?
+      array.sort
+      p array
+
+      low = array.first
+      high = array.last
+      percentage = Profit.last.try(:percentage) || 0.5
+
+      if !low.nil? && !high.nil?
+        product.price = low + (high - low) * percentage
+      elsif !low.nil?
+        product.price = low + low * percentage
+      end
+
+      p product.price.to_i
+      product.save
+    end
   end
 end
