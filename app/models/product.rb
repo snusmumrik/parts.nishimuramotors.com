@@ -8,16 +8,46 @@ class Product < ActiveRecord::Base
     CSV.foreach(path, 'r') do |row|
       p row
 
+      name = row[0]
+      model_number = row[1]
+      description = row[2]
+      sold_out = row[5]
+
       price = row[3] || 0
-      if row[5] == true
-        available = "2015/09/01"
+
+      if sold_out == "false"
+        available_on = Date.today
       else
-        available = ""
+        available_on = nil
       end
-      # spree_product = Spree::Product.create("name"=>"#{row[0]}", "sku"=>"", "prototype_id"=>"", "price"=>"#{price}", "available_on"=>"#{available}", "shipping_category_id"=>"1")
-      spree_product = Spree::Product.find($.)
-      spree_product.description = row[2]
-      spree_product.save
+
+      unless Spree::Product.where(["name = ? AND description = ?", name, description]).first
+        # if last = Spree::Product.last
+        #   last_id = last.id + 1
+        # else
+        #   last_id = 1
+        # end
+        # sku = last_id.to_s.rjust(10, '0')
+        # sku = nil
+
+        spree_product = Spree::Product.create("name" => "#{name}",
+                                              "description" =>  description,
+                                              "meta_keywords" => model_number,
+                                              # "sku" => sku,
+                                              "prototype_id" => "",
+                                              "price" => price,
+                                              "available_on" => available_on,
+                                              "shipping_category_id" => "1")
+
+        unless spree_product.id.blank?
+          replaced_name = name.gsub("'", "’")
+          if available_on.nil?
+            ActiveRecord::Base.connection.update("update spree_products set name = '#{replaced_name}' where id = #{spree_product.id}")
+          else
+            ActiveRecord::Base.connection.update("update spree_products set name = '#{replaced_name}', available_on = '#{available_on}' where id = #{spree_product.id}")
+          end
+        end
+      end
 
       # Product.save_image(spree_product, row[4])
     end
