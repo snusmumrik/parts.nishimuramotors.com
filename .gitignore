@@ -12,8 +12,11 @@
 !/log/.keep
 /tmp
 
+config/aws.yml
 config/database.yml
+config/environments
 config/initializers/spree.rb
 config/secrets.yml
 public/assets
+public/products.csv
 public/spree/products
