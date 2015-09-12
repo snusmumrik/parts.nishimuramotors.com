@@ -126,7 +126,9 @@ class Product < ActiveRecord::Base
     Spree::Product.all.each do |p|
       array = Spree::Product.where(["name = ?", p.name]).all
       if array.size > 1
-        duplicated = array.first.deleted_at = DateTime.now
+        p array
+        duplicated = array.last
+        duplicated.deleted_at = DateTime.now
         duplicated.save
       end
     end
