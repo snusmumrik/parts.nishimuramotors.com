@@ -52,7 +52,7 @@ ja:
         payment_state: "支払い状態"
         shipment_state: "配送状態"
         special_instructions: "特記事項"
-        state: "状態"
+        state: "注文状態"
         total: "合計"
       spree/order/bill_address:
         address1: "請求先の住所"
@@ -109,7 +109,7 @@ ja:
         abbr: "略語"
         name: "名称"
       spree/state_change:
-        state_changes:
+        state_changes: 変更履歴
         state_from:
         state_to:
         timestamp:
@@ -378,17 +378,17 @@ ja:
       tab:
         configuration:
         option_types:
-        orders:
+        orders: 注文
         overview:
         products:
         promotions:
         promotion_categories:
         properties:
         prototypes:
-        reports:
+        reports: レポート
         taxonomies:
         taxons:
-        users:
+        users: ユーザー
       user:
         account:
         addresses:
@@ -403,8 +403,8 @@ ja:
     agree_to_privacy_policy:
     agree_to_terms_of_service:
     all: "全て"
-    all_adjustments_closed:
-    all_adjustments_opened:
+    all_adjustments_closed: 調整を終了しました。
+    all_adjustments_opened: 調整を開始します。
     all_departments: "全てのカテゴリ"
     all_items_have_been_returned:
     allow_ssl_in_development_and_test: "開発モードとテストモードでSSLを使用"
@@ -422,9 +422,9 @@ ja:
     analytics_desc_list_4:
     analytics_trackers: "アナリティクストラッカー"
     and: "と"
-    approve:
-    approved_at:
-    approver:
+    approve: 承認
+    approved_at: 承認時刻
+    approver: 承認者
     are_you_sure: "これで宜しいですか?"
     are_you_sure_delete: "削除しますか?"
     associated_adjustment_closed:
@@ -488,7 +488,7 @@ ja:
     click_and_drag_on_the_products_to_sort_them:
     clone: "複製"
     close:
-    close_all_adjustments:
+    close_all_adjustments: 調整終了
     code: "コード"
     company:
     complete: "完了"
@@ -545,7 +545,7 @@ ja:
     customer_details: "お客様詳細情報"
     customer_details_updated: "お客様詳細情報が更新されました。"
     customer_return:
-    customer_returns:
+    customer_returns: 返金
     customer_search: "お客様の検索"
     cut: "カット"
     cvv_response:
@@ -559,7 +559,7 @@ ja:
         site_id:
         token:
       jirafe_settings_updated:
-    date:
+    date: 日付
     date_completed: "完了日"
     date_picker:
       first_day:
@@ -813,7 +813,7 @@ ja:
     no_rules_added: "ルールが追加されていません"
     no_shipping_method_selected:
     no_state_changes:
-    no_tracking_present:
+    no_tracking_present: 追跡情報が見つかりません。
     none: "空です"
     none_selected:
     normal_amount: "通常価格"
@@ -832,7 +832,7 @@ ja:
     num_orders:
     on_hand: "入荷数"
     open:
-    open_all_adjustments:
+    open_all_adjustments: 調整開始
     option_type: "オプションタイプ"
     option_type_placeholder: "プレイスホルダ"
     option_types: "オプションタイプ"
@@ -845,7 +845,7 @@ ja:
     order: "注文"
     order_adjustments: 消費税、送料等
     order_already_updated:
-    order_approved:
+    order_approved: 注文が承認されました。
     order_canceled:
     order_details: "注文詳細"
     order_email_resent: "注文詳細メールを再送信しました"
@@ -1017,7 +1017,7 @@ ja:
     provider: "プロバイダー"
     provider_settings_warning: "プロバイダータイプを変更する時は、プロバイダー設定を編集する前に保存しなければなりません。"
     qty: "個数"
-    quantity:
+    quantity: 数量
     quantity_returned: "返送された数"
     quantity_shipped: "発送された数"
     quick_search: "検索"
@@ -1083,8 +1083,8 @@ ja:
     returns:
     review: "内容を確認する"
     risk:
-    risk_analysis:
-    risky:
+    risk_analysis: リスク分析
+    risky: Risky
     rma_credit: RMAクレジット
     rma_number: RMA番号
     rma_value: RMA値
@@ -1166,7 +1166,7 @@ ja:
     slug:
     source:
     special_instructions: "特別な指示"
-    split:
+    split: Split
     spree_gateway_error_flash_for_checkout: "支払い情報に問題があります。情報をお確かめになり再試行願います。"
     ssl:
       change_protocol:
@@ -1269,7 +1269,7 @@ ja:
     tiered_flat_rate:
     tiered_percent:
     tiers:
-    time:
+    time: 時刻
     to_add_variants_you_must_first_define: "種類を追加するには、まずそれを定義する必要があります。"
     total: "合計"
     total_per_item:
@@ -1278,8 +1278,8 @@ ja:
     total_sales:
     track_inventory:
     tracking: "トラッキング"
-    tracking_number:
-    tracking_url:
+    tracking_number: 追跡番号
+    tracking_url: 荷物追跡URL
     tracking_url_placeholder:
     transaction_id:
     transfer_from_location:
