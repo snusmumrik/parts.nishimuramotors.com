@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803065653) do
+ActiveRecord::Schema.define(version: 20150908013612) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -27,6 +27,26 @@ ActiveRecord::Schema.define(version: 20150803065653) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "prices", force: :cascade do |t|
+    t.integer  "spree_product_id", limit: 4
+    t.integer  "selling_price",    limit: 4
+    t.integer  "ngsj",             limit: 4
+    t.integer  "iiparts",          limit: 4
+    t.integer  "amazon",           limit: 4
+    t.integer  "rakuten",          limit: 4
+    t.integer  "yahoo",            limit: 4
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "prices", ["spree_product_id"], name: "index_prices_on_spree_product_id", using: :btree
+
+  create_table "profits", force: :cascade do |t|
+    t.float    "percentage", limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "spree_addresses", force: :cascade do |t|
     t.string   "firstname",         limit: 255
@@ -866,13 +886,10 @@ ActiveRecord::Schema.define(version: 20150803065653) do
   add_index "spree_state_changes", ["user_id"], name: "index_spree_state_changes_on_user_id", using: :btree
 
   create_table "spree_states", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "abbr",       limit: 255
-    t.integer  "country_id", limit: 4
-    t.datetime "updated_at"
+    t.string  "name",       limit: 255
+    t.string  "abbr",       limit: 255
+    t.integer "country_id", limit: 4
   end
-
-  add_index "spree_states", ["country_id"], name: "index_spree_states_on_country_id", using: :btree
 
   create_table "spree_stock_items", force: :cascade do |t|
     t.integer  "stock_location_id", limit: 4
@@ -1163,4 +1180,37 @@ ActiveRecord::Schema.define(version: 20150803065653) do
   add_index "spree_zones", ["default_tax"], name: "index_spree_zones_on_default_tax", using: :btree
   add_index "spree_zones", ["kind"], name: "index_spree_zones_on_kind", using: :btree
 
+  create_table "suppliers", force: :cascade do |t|
+    t.integer  "spree_product_id", limit: 4
+    t.string   "ngsj",             limit: 255
+    t.string   "iiparts",          limit: 255
+    t.string   "amazon",           limit: 255
+    t.string   "rakuten",          limit: 255
+    t.string   "yahoo",            limit: 255
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "suppliers", ["spree_product_id"], name: "index_suppliers_on_spree_product_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  add_foreign_key "prices", "spree_products"
+  add_foreign_key "suppliers", "spree_products"
 end
