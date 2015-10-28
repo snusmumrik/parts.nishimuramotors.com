@@ -2,13 +2,12 @@
 
 <nav id="taxonomies" class="sidebar-item" data-hook>
   <% @taxonomies.each do |taxonomy| %>
-    <% if taxonomy.id.to_s == params[:taxon] %>
     <% cache [I18n.locale, taxonomy, max_level, @taxon] do %>
-    <h4 class='taxonomy-root'>
-      <%= Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name) %>
-    </h4>
+      <% taxon = ActiveRecord::Base.connection.select_one("select id from spree_taxons where taxonomy_id = #{taxonomy.id} AND parent_id IS NULL") %>
+      <h4 class='taxonomy-root'>
+        <%= link_to Spree.t(:shop_by_taxonomy, :taxonomy => taxonomy.name), "#{products_path}?taxon=#{taxon['id']}" %>
+      </h4>
       <%= taxons_tree(taxonomy.root, @taxon, max_level) %>
-    <% end %>
     <% end %>
   <% end %>
 </nav>

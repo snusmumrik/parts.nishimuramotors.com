@@ -844,7 +844,7 @@ ja:
     or_over_price: "%{price}以上"
     order: "注文"
     order_adjustments: 消費税、送料等
-    order_already_updated:
+    order_already_updated: 注文情報は既に更新されています。
     order_approved: 注文が承認されました。
     order_canceled:
     order_details: "注文詳細"

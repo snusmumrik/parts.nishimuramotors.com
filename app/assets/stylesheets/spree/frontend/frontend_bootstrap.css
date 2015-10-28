@@ -1748,7 +1748,7 @@ a {
 
 /* line 52 */
 a:hover, a:focus {
-    color: #103452;
+    /* color: #103452; */
     text-decoration: underline;
 }
 
@@ -5700,7 +5700,7 @@ tbody.collapse.in {
 /* line 23 */
 .nav > li > a:hover, .nav > li > a:focus {
     text-decoration: none;
-    background-color: #eeeeee;
+    /* background-color: #eeeeee; */
 }
 
 /* line 31 */
@@ -7429,7 +7429,8 @@ a.thumbnail.active {
 .list-group-item {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    /* padding: 10px 15px; */
+    padding: 5px 15px;
     margin-bottom: -1px;
     background-color: #fff;
     border: 1px solid #ddd;
@@ -9440,6 +9441,7 @@ button.close {
     background: none !important;
     background-size: cover;
     margin-bottom: 20px;
+    background-image: url("/images/haikei.jpg") !important;
 }
 
 /* line 13 */
@@ -9460,7 +9462,7 @@ button.close {
 
 /* line 26 */
 #spree-header .nav a {
-    color: #1c5c92 !important;
+    color: #1c5c92;
 }
 
 /* line 29 */
@@ -9536,3 +9538,42 @@ table#line-items > tfoot > tr > td.order-qty {
 }
 
 
+.clear {
+    clear: both;
+}
+
+.banner {
+    margin-bottom: 30px;
+}
+
+.banner .desc {
+    margin: 5px 0 10px;
+    font-size: 0.9em;
+}
+
+.banner_left {
+    width: 562px;
+    margin: 10px 0;
+    float: left;
+    clear: left;
+}
+
+.banner_right {
+    width: 222px;
+    margin: 10px 0;
+    float: right;
+    clear: right;
+}
+
+.banner_right img {
+    margin-bottom: 30px;
+}
+
+#nav-bar a {
+    color: #ffffff !important;
+}
+
+
+div.list-group {
+    /* display: none; */
+}
