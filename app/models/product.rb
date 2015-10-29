@@ -138,21 +138,22 @@ class Product < ActiveRecord::Base
     path = "public/products.csv"
     CSV.foreach(path, 'r') do |row|
       # p row
-      # taxonomy = row[0].gsub("'", "’")
+      taxonomy = row[0].gsub("'", "’")
       taxon = row[1].gsub("'", "’").gsub(/　+/, " ")
       name = row[2].gsub("'", "’")
+      array = [taxonomy, taxon]
 
       if product = Spree::Product.where(["name = ?", name]).first
-        if taxon_translation = ActiveRecord::Base.connection.select_one("select * from spree_taxon_translations where name = '#{taxon}'")
+        array.each do |value|
+          if taxon_translation = ActiveRecord::Base.connection.select_one("select * from spree_taxon_translations where name = '#{value}'")
 
-          p "TAXON: #{taxon}, PRODUCT: #{product.name}, TAXON: #{taxon_translation["name"]}"
+            p "TAXON: #{value}, PRODUCT: #{product.name}"
 
-          if products_taxons = ActiveRecord::Base.connection.select_one("select * from spree_products_taxons where product_id = #{product.id} and taxon_id = #{taxon_translation["spree_taxon_id"]}")
-            ActiveRecord::Base.connection.update("update spree_products_taxons set taxon_id = #{taxon_translation["spree_taxon_id"]} where id = #{products_taxons['id']}")
-          else
-            ActiveRecord::Base.connection.create("insert into spree_products_taxons (product_id, taxon_id, position) values (#{product.id}, #{taxon_translation["spree_taxon_id"]}, '1')")
+            unless ActiveRecord::Base.connection.select_one("select * from spree_products_taxons where product_id = #{product.id} and taxon_id = #{taxon_translation["spree_taxon_id"]}")
+              ActiveRecord::Base.connection.create("insert into spree_products_taxons (product_id, taxon_id, position) values (#{product.id}, #{taxon_translation["spree_taxon_id"]}, '1')")
+            end
+
           end
-
         end
       end
     end
