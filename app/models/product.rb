@@ -139,7 +139,7 @@ class Product < ActiveRecord::Base
     CSV.foreach(path, 'r') do |row|
       # p row
       taxonomy = row[0].gsub("'", "’")
-      taxon = row[1].gsub("'", "’").gsub(/　+/, " ")
+      taxon = row[1].gsub("'", "’").gsub(/　+/, " ") unless row[1].blank?
       name = row[2].gsub("'", "’")
       array = [taxonomy, taxon]
 
