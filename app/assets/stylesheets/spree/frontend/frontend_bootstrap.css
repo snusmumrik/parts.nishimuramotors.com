@@ -9462,15 +9462,16 @@ button.close {
 
 /* line 26 */
 #spree-header .nav a {
-    color: #1c5c92;
+    color: #1c5c92 !important;
 }
 
 /* line 29 */
 #spree-header .nav a:hover, #spree-header .nav a:focus {
     /* background: rgba(34, 34, 34, 0.4); */
+    background: none !important;
 }
 
-/* line 34 */
+/* line 34
 #spree-header .navbar {
     border: 0;
     margin-bottom: 0;
