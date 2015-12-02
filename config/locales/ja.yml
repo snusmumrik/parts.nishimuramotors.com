@@ -1122,24 +1122,19 @@ ja:
     settings: "設定"
     ship: "配送"
     ship_address: "配送先住所"
-    ship_total:
+    ship_total: 送料
     shipment: "発送"
     shipment_adjustments:
     shipment_details:
     shipment_mailer:
       shipped_email:
         dear_customer:
-        instructions:
-        shipment_summary:
+        instructions: 以下の商品を発送いたしました。
+        shipment_summary: 商品詳細
         subject: "発送の通知"
-        thanks: "ご注文ありがとうございました。
-        ニシムラモータース
-        900-0005
-        沖縄県那覇市天久794-6 1F
-        http://parts.nishimuramotors.com
-        "
-        track_information:
-        track_link:
+        thanks: お買い上げありがとうございました。
+        track_information: "追跡番号: %{tracking}"
+        track_link: "追跡情報: %{url}"
     shipment_state: "配送状況"
     shipment_states:
       backorder: "入荷待ち"
