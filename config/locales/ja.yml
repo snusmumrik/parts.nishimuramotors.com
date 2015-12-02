@@ -325,6 +325,7 @@ ja:
       not_found:
       not_locked:
       not_saved:
+
   spree:
     abbreviation: "省略"
     accept:
@@ -852,20 +853,25 @@ ja:
     order_information: "注文情報"
     order_mailer:
       cancel_email:
-        dear_customer:
-        instructions:
-        order_summary_canceled:
+        dear_customer: お客様各位
+        instructions: 以下の内容のご注文のキャンセルを承りました。
+        order_summary_canceled: 注文詳細 [キャンセル]
         subject: "注文のキャンセル"
         subtotal: 合計
-        total:
+        total: 合計
       confirm_email:
-        dear_customer:
-        instructions:
-        order_summary:
+        dear_customer: お客様各位
+        instructions: 以下の内容でご注文を承りました。
+        order_summary: 注文詳細
         subject: "注文確認"
         subtotal: 合計
-        thanks:
-        total:
+        thanks: "ご注文ありがとうございました。
+        ニシムラモータース
+        900-0005
+        沖縄県那覇市天久794-6 1F
+        http://parts.nishimuramotors.com
+        "
+        total: 合計
     order_not_found:
     order_number: "注文番号 %{number}"
     order_processed_successfully: "注文が完了しました。"
@@ -1126,7 +1132,12 @@ ja:
         instructions:
         shipment_summary:
         subject: "発送の通知"
-        thanks:
+        thanks: "ご注文ありがとうございました。
+        ニシムラモータース
+        900-0005
+        沖縄県那覇市天久794-6 1F
+        http://parts.nishimuramotors.com
+        "
         track_information:
         track_link:
     shipment_state: "配送状況"
@@ -1331,3 +1342,9 @@ ja:
     zipcode:
     zone: "ゾーン"
     zones: "ゾーン"
+
+    use_existing_cc: 既存のクレジットカードを使用する
+    use_new_cc_or_payment_method: 新しい支払い方法を選択する
+    line_item_adjustments: 調整項目
+    summary: 小計
+    transaction_id: 追跡番号
