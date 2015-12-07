@@ -9574,7 +9574,47 @@ table#line-items > tfoot > tr > td.order-qty {
     color: #ffffff !important;
 }
 
+/* Custom */
 
 div.list-group {
     /* display: none; */
+}
+
+div.contents {
+    width: 90%;
+    margin: auto;
+}
+
+div.contents dt {
+    font-size: 1.2em;
+}
+
+div.contents dd {
+    margin: 0 0 10px 15px;
+}
+
+div.contents li {
+    list-style-type: none;
+}
+
+table.price {
+    width: 300px;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+table.price th{
+    width: 75%;
+    padding: 6px;
+    text-align: left;
+    vertical-align: top;
+    color: #333;
+    background-color: #eee;
+    border: 1px solid #b9b9b9;
+}
+
+table.price td{
+    padding: 6px;
+    background-color: #fff;
+    border: 1px solid #b9b9b9;
 }
