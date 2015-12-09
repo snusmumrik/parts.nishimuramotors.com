@@ -6206,8 +6206,10 @@ tbody.collapse.in {
 
 /* line 286 */
 .navbar-form {
-    margin-left: -15px;
-    margin-right: -15px;
+    /* margin-left: -15px;
+     * margin-right: -15px; */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     padding: 10px 15px;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
@@ -9442,6 +9444,7 @@ button.close {
     background-size: cover;
     margin-bottom: 20px;
     background-image: url("/images/haikei.jpg") !important;
+    background-repeat: no-repeat !important;
 }
 
 /* line 13 */
@@ -9544,7 +9547,12 @@ table#line-items > tfoot > tr > td.order-qty {
 }
 
 .banner {
+    width: 100%;
     margin-bottom: 30px;
+}
+
+.banner img {
+    width: 100%;
 }
 
 .banner .desc {
@@ -9553,14 +9561,14 @@ table#line-items > tfoot > tr > td.order-qty {
 }
 
 .banner_left {
-    width: 562px;
+    width: 69%;
     margin: 10px 0;
     float: left;
     clear: left;
 }
 
 .banner_right {
-    width: 222px;
+    width: 29%;
     margin: 10px 0;
     float: right;
     clear: right;
@@ -9603,7 +9611,7 @@ table.price {
     margin-bottom: 30px;
 }
 
-table.price th{
+table.price th {
     width: 75%;
     padding: 6px;
     text-align: left;
@@ -9613,7 +9621,7 @@ table.price th{
     border: 1px solid #b9b9b9;
 }
 
-table.price td{
+table.price td {
     padding: 6px;
     background-color: #fff;
     border: 1px solid #b9b9b9;
