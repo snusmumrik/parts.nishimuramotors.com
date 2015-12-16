@@ -13,7 +13,7 @@
 
     <div class="container">
       <div class="row" data-hook>
-        <% if controller.controller_name == "home" %>
+        <% if controller.controller_name == "home" && controller.action_name == "index" %>
           <div id="top-banner">
             <div class="left">
               <%= image_tag "/images/0011.jpg" %>
