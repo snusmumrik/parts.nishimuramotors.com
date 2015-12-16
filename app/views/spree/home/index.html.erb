@@ -1,6 +1,7 @@
 <div class="banner">
+  <!-- <%= link_to image_tag("/images/002.jpg"), "#{products_path}?taxon=1" %> -->
   <%= link_to image_tag("/images/battery.jpg"), "#{products_path}?taxon=1" %>
-  <div class="banner_left">
+  <div class="banner-left">
     <!-- <%= link_to image_tag("/images/01.jpg"), "#{products_path}?taxon=35" %>
      !-- <div class="desc">
      !--   発売以来大好評！LEDヘッドライト<br>
@@ -15,7 +16,7 @@
      !--   ライブディオパーツ値下げ！
      !-- </div> -->
   </div>
-  <div class="banner_right">
+  <div class="banner-right">
     <!-- <%= link_to image_tag("/images/04.jpg"), "#{products_path}?taxon=241" %>
      !-- <%= link_to image_tag("/images/05.jpg"), "/t/suzukichun-zheng-patu/adoresuv125-slash-g-slash-s" %>
      !-- <%= link_to image_tag("/images/06.jpg"), "/t/kasutamupatu/zumax-jf52" %>
@@ -32,7 +33,11 @@
 <% end %>
 
 <div data-hook="homepage_products">
+  <% begin %>
   <% cache(cache_key_for_products) do %>
     <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+  <% end %>
+  <% rescue %>
+  <%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
   <% end %>
 </div>

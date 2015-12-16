@@ -5694,7 +5694,7 @@ tbody.collapse.in {
 .nav > li > a {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    padding: 10px 5px !important;
 }
 
 /* line 23 */
@@ -5906,7 +5906,7 @@ tbody.collapse.in {
 .navbar {
     position: relative;
     min-height: 50px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     border: 1px solid transparent;
 }
 
@@ -9465,7 +9465,7 @@ button.close {
 
 /* line 26 */
 #spree-header .nav a {
-    color: #1c5c92 !important;
+    color: #1c5c92;
 }
 
 /* line 29 */
@@ -9542,8 +9542,18 @@ table#line-items > tfoot > tr > td.order-qty {
 }
 
 
+/* Custom */
+
 .clear {
     clear: both;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }
 
 .banner {
@@ -9553,6 +9563,7 @@ table#line-items > tfoot > tr > td.order-qty {
 
 .banner img {
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .banner .desc {
@@ -9560,21 +9571,21 @@ table#line-items > tfoot > tr > td.order-qty {
     font-size: 0.9em;
 }
 
-.banner_left {
+.banner-left {
     width: 69%;
     margin: 10px 0;
     float: left;
     clear: left;
 }
 
-.banner_right {
+.banner-right {
     width: 29%;
     margin: 10px 0;
     float: right;
     clear: right;
 }
 
-.banner_right img {
+.banner-right img {
     margin-bottom: 30px;
 }
 
@@ -9582,7 +9593,37 @@ table#line-items > tfoot > tr > td.order-qty {
     color: #ffffff !important;
 }
 
-/* Custom */
+#main-nav-bar a {
+    color: #1c5c92 !important;
+}
+
+#link-to-login a {
+    color: white !important;
+}
+
+#top-banner {
+    margin-bottom: 20px;
+}
+
+.ranking {
+    width: 100px;
+    height: 30px;
+}
+
+#ranking-1 {
+    background-image: url("/images/no1.png");
+    background-repeat: no-repeat !important;
+}
+
+#ranking-2 {
+    background-image: url("/images/no2.png");
+    background-repeat: no-repeat !important;
+}
+
+#ranking-3 {
+    background-image: url("/images/no3.png");
+    background-repeat: no-repeat !important;
+}
 
 div.list-group {
     /* display: none; */
