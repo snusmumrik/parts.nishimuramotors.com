@@ -9442,7 +9442,7 @@ button.close {
 #spree-header {
     background: none !important;
     background-size: cover;
-    margin-bottom: 20px;
+    margin-bottom: 0 !important;
     background-image: url("/images/haikei.jpg") !important;
     background-repeat: no-repeat !important;
 }
@@ -9450,7 +9450,7 @@ button.close {
 /* line 13 */
 #spree-header #header {
     background: none !important;
-    padding: 20px 0;
+    padding: 20px 0 10px !important;
 }
 
 /* line 18 */
