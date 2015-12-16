@@ -14,17 +14,18 @@
     <div class="container">
       <div class="row" data-hook>
         <% if controller.controller_name == "home" && controller.action_name == "index" %>
-          <div id="top-banner">
-            <div class="left">
+          <div id="top-banner" class="banner">
+            <div class="banner-left">
               <%= image_tag "/images/0011.jpg" %>
             </div>
-            <div class="top-banner-right">
+            <div class="banner-right">
               <%= image_tag "/images/ranking.png" %>
               <%= link_to image_tag("/images/ranking1.png"), "/t/you-ming-mekataiya/danrotupu" %>
               <%= link_to image_tag("/images/ranking2.png"), "/products/gs-yt4l-bs" %>
               <%= link_to image_tag("/images/ranking3.png"), "/t/you-ming-mekataiya/danrotupu" %>
             </div>
           </div>
+          <div class="clear"></div>
         <% end %>
 
         <%= breadcrumbs(@taxon) %>

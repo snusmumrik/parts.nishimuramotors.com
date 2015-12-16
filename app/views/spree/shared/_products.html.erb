@@ -1,6 +1,6 @@
 <% if controller.controller_name == "home" %>
   <% if controller.action_name == "index" %>
-    <%= image_tag "/images/bar1.png" %>
+    <%= image_tag "/images/bar1.png", class: "title-bar" %>
     <% if products.any? %>
       <div id="recomendation" class="row" data-hook>
         <% products.each do |product| %>
@@ -25,7 +25,7 @@
       </div>
     <% end %>
 
-    <%= image_tag "/images/bar2.png" %>
+    <%= image_tag "/images/bar2.png", class: "title-bar" %>
     <% if @new_items.any? %>
       <div id="new_items" class="row" data-hook>
         <% @new_items.each do |product| %>
@@ -51,7 +51,7 @@
     <% end %>
   <% end %>
 
-  <%= image_tag "/images/bar3.png" %>
+  <%= image_tag "/images/bar3.png", class: "title-bar" %>
   <% if @ranking.any? %>
     <div id="products" class="row" data-hook>
       <% @ranking.each_with_index do |product, i| %>
