@@ -14,9 +14,11 @@
 
 config/aws.yml
 config/database.yml
-config/environments
+config/environments/development.rb
+config/environments/production.rb
 config/initializers/spree.rb
 config/secrets.yml
 public/assets
-public/products.csv
+public/*.csv
 public/spree/products
+public/psd
