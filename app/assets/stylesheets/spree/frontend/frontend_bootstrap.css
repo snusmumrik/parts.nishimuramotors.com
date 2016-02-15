@@ -9677,3 +9677,8 @@ img.title-bar {
 .banner img {
     width: 100%;
 }
+h1.small {
+    margin: 0 !important;
+    font-size: 1em !important;
+    text-align: right;
+}
